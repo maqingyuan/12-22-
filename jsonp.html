@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//1动态创建js脚本
+//		var js=document.createElement("script");
+//		//2.给脚本设置src
+//		js.src="callback=xxx";
+//		//3.把脚本添加到head中
+//		document.getElementsByTagName("head")[0].appendChild(js);
+//		//4.实现回调函数
+//		function xxx(a){
+//			console.log(a);
+//		}
+		
+		
+		//jquery实现jsonp
+//		$(function($){
+//			$.ajax({
+//				type:"get",
+//				url:"http://192.168.0.122/json.php",
+//				async:true,
+//				dataType:"jsonp",
+//				jsonp:"callback",//传递给请求页面的一个东西，用来获		得jsonp回调函数的参数名（一般默认就是callback）
+//				jsonpCallback:"xxx",//回调函数名，默认情况下jq会自动生成一个随机的回调函数名
+//				success:function(res){
+//					console.log(res);
+//				},
+//				error:function(){
+//					
+//				}
+//			})
+//		})
+
+
+			$.ajax({
+				type:"get",
+				url:"http://localhost/lol.php",
+//				dataType:"json",
+				async:true,
+				success:function(res){
+					res=JSON.parse(res);
+					console.log(res);				
+				},
+				error:function(){
+					
+				}
+			});
+	</script>
+</html>
